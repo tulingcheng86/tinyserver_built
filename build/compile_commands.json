@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/home/sbim/Music/webserver_built/build",
+  "command": "/usr/bin/c++ -DROOT_DIR=\\\"/home/sbim/Music/webserver_built/root\\\" -I/home/sbim/Music/webserver_built/src -I/home/sbim/Music/webserver_built/src/CGImysql -I/home/sbim/Music/webserver_built/src/config -I/home/sbim/Music/webserver_built/src/http -I/home/sbim/Music/webserver_built/src/lock -I/home/sbim/Music/webserver_built/src/log -I/home/sbim/Music/webserver_built/src/server -I/home/sbim/Music/webserver_built/src/threadpool -I/home/sbim/Music/webserver_built/src/timer -I/usr/include/mysql -g -std=gnu++11 -o CMakeFiles/WebServer.dir/src/CGImysql/sql_connection_pool.cpp.o -c /home/sbim/Music/webserver_built/src/CGImysql/sql_connection_pool.cpp",
+  "file": "/home/sbim/Music/webserver_built/src/CGImysql/sql_connection_pool.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/CGImysql/sql_connection_pool.cpp.o"
+},
+{
+  "directory": "/home/sbim/Music/webserver_built/build",
+  "command": "/usr/bin/c++ -DROOT_DIR=\\\"/home/sbim/Music/webserver_built/root\\\" -I/home/sbim/Music/webserver_built/src -I/home/sbim/Music/webserver_built/src/CGImysql -I/home/sbim/Music/webserver_built/src/config -I/home/sbim/Music/webserver_built/src/http -I/home/sbim/Music/webserver_built/src/lock -I/home/sbim/Music/webserver_built/src/log -I/home/sbim/Music/webserver_built/src/server -I/home/sbim/Music/webserver_built/src/threadpool -I/home/sbim/Music/webserver_built/src/timer -I/usr/include/mysql -g -std=gnu++11 -o CMakeFiles/WebServer.dir/src/config/config.cpp.o -c /home/sbim/Music/webserver_built/src/config/config.cpp",
+  "file": "/home/sbim/Music/webserver_built/src/config/config.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/config/config.cpp.o"
+},
+{
+  "directory": "/home/sbim/Music/webserver_built/build",
+  "command": "/usr/bin/c++ -DROOT_DIR=\\\"/home/sbim/Music/webserver_built/root\\\" -I/home/sbim/Music/webserver_built/src -I/home/sbim/Music/webserver_built/src/CGImysql -I/home/sbim/Music/webserver_built/src/config -I/home/sbim/Music/webserver_built/src/http -I/home/sbim/Music/webserver_built/src/lock -I/home/sbim/Music/webserver_built/src/log -I/home/sbim/Music/webserver_built/src/server -I/home/sbim/Music/webserver_built/src/threadpool -I/home/sbim/Music/webserver_built/src/timer -I/usr/include/mysql -g -std=gnu++11 -o CMakeFiles/WebServer.dir/src/http/http_conn.cpp.o -c /home/sbim/Music/webserver_built/src/http/http_conn.cpp",
+  "file": "/home/sbim/Music/webserver_built/src/http/http_conn.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/http/http_conn.cpp.o"
+},
+{
+  "directory": "/home/sbim/Music/webserver_built/build",
+  "command": "/usr/bin/c++ -DROOT_DIR=\\\"/home/sbim/Music/webserver_built/root\\\" -I/home/sbim/Music/webserver_built/src -I/home/sbim/Music/webserver_built/src/CGImysql -I/home/sbim/Music/webserver_built/src/config -I/home/sbim/Music/webserver_built/src/http -I/home/sbim/Music/webserver_built/src/lock -I/home/sbim/Music/webserver_built/src/log -I/home/sbim/Music/webserver_built/src/server -I/home/sbim/Music/webserver_built/src/threadpool -I/home/sbim/Music/webserver_built/src/timer -I/usr/include/mysql -g -std=gnu++11 -o CMakeFiles/WebServer.dir/src/log/log.cpp.o -c /home/sbim/Music/webserver_built/src/log/log.cpp",
+  "file": "/home/sbim/Music/webserver_built/src/log/log.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/log/log.cpp.o"
+},
+{
+  "directory": "/home/sbim/Music/webserver_built/build",
+  "command": "/usr/bin/c++ -DROOT_DIR=\\\"/home/sbim/Music/webserver_built/root\\\" -I/home/sbim/Music/webserver_built/src -I/home/sbim/Music/webserver_built/src/CGImysql -I/home/sbim/Music/webserver_built/src/config -I/home/sbim/Music/webserver_built/src/http -I/home/sbim/Music/webserver_built/src/lock -I/home/sbim/Music/webserver_built/src/log -I/home/sbim/Music/webserver_built/src/server -I/home/sbim/Music/webserver_built/src/threadpool -I/home/sbim/Music/webserver_built/src/timer -I/usr/include/mysql -g -std=gnu++11 -o CMakeFiles/WebServer.dir/src/server/webserver.cpp.o -c /home/sbim/Music/webserver_built/src/server/webserver.cpp",
+  "file": "/home/sbim/Music/webserver_built/src/server/webserver.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/server/webserver.cpp.o"
+},
+{
+  "directory": "/home/sbim/Music/webserver_built/build",
+  "command": "/usr/bin/c++ -DROOT_DIR=\\\"/home/sbim/Music/webserver_built/root\\\" -I/home/sbim/Music/webserver_built/src -I/home/sbim/Music/webserver_built/src/CGImysql -I/home/sbim/Music/webserver_built/src/config -I/home/sbim/Music/webserver_built/src/http -I/home/sbim/Music/webserver_built/src/lock -I/home/sbim/Music/webserver_built/src/log -I/home/sbim/Music/webserver_built/src/server -I/home/sbim/Music/webserver_built/src/threadpool -I/home/sbim/Music/webserver_built/src/timer -I/usr/include/mysql -g -std=gnu++11 -o CMakeFiles/WebServer.dir/src/timer/lst_timer.cpp.o -c /home/sbim/Music/webserver_built/src/timer/lst_timer.cpp",
+  "file": "/home/sbim/Music/webserver_built/src/timer/lst_timer.cpp",
+  "output": "CMakeFiles/WebServer.dir/src/timer/lst_timer.cpp.o"
+},
+{
+  "directory": "/home/sbim/Music/webserver_built/build",
+  "command": "/usr/bin/c++ -DROOT_DIR=\\\"/home/sbim/Music/webserver_built/root\\\" -I/home/sbim/Music/webserver_built/src -I/home/sbim/Music/webserver_built/src/CGImysql -I/home/sbim/Music/webserver_built/src/config -I/home/sbim/Music/webserver_built/src/http -I/home/sbim/Music/webserver_built/src/lock -I/home/sbim/Music/webserver_built/src/log -I/home/sbim/Music/webserver_built/src/server -I/home/sbim/Music/webserver_built/src/threadpool -I/home/sbim/Music/webserver_built/src/timer -I/usr/include/mysql -g -std=gnu++11 -o CMakeFiles/WebServer.dir/main.cpp.o -c /home/sbim/Music/webserver_built/main.cpp",
+  "file": "/home/sbim/Music/webserver_built/main.cpp",
+  "output": "CMakeFiles/WebServer.dir/main.cpp.o"
+}
+]
