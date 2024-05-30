@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     string databasename = "yourdb";
     //命令行解析
     Config config;
-    config.parse_arg(argc, argv);
+    config.parse_arg(argc, argv);//命令行解析
 
     WebServer server;
 
@@ -17,7 +17,6 @@ int main(int argc, char *argv[])
     server.init(config.PORT, user, passwd, databasename, config.LOGWrite, 
                 config.OPT_LINGER, config.TRIGMode,  config.sql_num,  config.thread_num, 
                 config.close_log, config.actor_model);
-    
 
     //日志
     server.log_write();

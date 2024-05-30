@@ -134,9 +134,12 @@ bool threadpool<T>::append_p(T *request)
 
 template <typename T>
 void *threadpool<T>::worker(void *arg)
-{
+{   
+    // 将参数 arg 转换为 threadpool<T> 类型的指针
     threadpool *pool = static_cast<threadpool *>(arg);
+    // 调用线程池实例的 run 方法
     pool->run();
+    // 返回线程池的指针
     return pool;
 }
 
@@ -145,19 +148,26 @@ void threadpool<T>::run()
 {
     while (true)
     {
+        // 等待有任务可以处理
         m_queuestat.wait();
+        // 锁定任务队列
         m_queuelocker.lock();
+        // 如果任务队列为空，解锁并继续等待
         if (m_workqueue.empty())
         {
             m_queuelocker.unlock();
             continue;
         }
+
+        // 获取任务队列中的第一个任务
         T *request = m_workqueue.front();
         m_workqueue.pop_front();
         m_queuelocker.unlock();
+
+        // 如果任务为空，继续下一次循环
         if (!request)
             continue;
-
+        // 如果使用的是 Reactor 模型
         if (1 == m_actor_model)
         {
             if (0 == request->m_state)
@@ -166,7 +176,7 @@ void threadpool<T>::run()
                 {
                     request->improv = 1;
                     connectionRAII mysqlcon(&request->mysql, m_connPool);
-                    request->process();
+                    request->process();//（HTTP请求的`process`函数）
                 }
                 else
                 {
@@ -188,7 +198,8 @@ void threadpool<T>::run()
             }
         }
         else
-        {
+        {   
+            // 如果使用的是 Proactor 模型，直接处理任务
             connectionRAII mysqlcon(&request->mysql, m_connPool);
             request->process();
         }
