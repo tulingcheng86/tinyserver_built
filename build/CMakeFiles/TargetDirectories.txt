@@ -1,3 +1,0 @@
-/home/sbim/Music/webserver_built/build/CMakeFiles/WebServer.dir
-/home/sbim/Music/webserver_built/build/CMakeFiles/edit_cache.dir
-/home/sbim/Music/webserver_built/build/CMakeFiles/rebuild_cache.dir
