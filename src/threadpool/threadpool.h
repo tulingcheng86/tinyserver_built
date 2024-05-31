@@ -146,12 +146,15 @@ void *threadpool<T>::worker(void *arg)
 template <typename T>
 void threadpool<T>::run()
 {
+    // 无限循环，确保线程池持续运行
     while (true)
     {
-        // 等待有任务可以处理
+        // 等待任务队列中有任务可处理
         m_queuestat.wait();
-        // 锁定任务队列
+
+        // 锁定任务队列，以保证线程安全
         m_queuelocker.lock();
+
         // 如果任务队列为空，解锁并继续等待
         if (m_workqueue.empty())
         {
@@ -159,47 +162,57 @@ void threadpool<T>::run()
             continue;
         }
 
-        // 获取任务队列中的第一个任务
+        // 从任务队列中取出第一个任务
         T *request = m_workqueue.front();
         m_workqueue.pop_front();
+
+        // 解锁任务队列，以便其他线程能访问
         m_queuelocker.unlock();
 
         // 如果任务为空，继续下一次循环
         if (!request)
             continue;
+
         // 如果使用的是 Reactor 模型
         if (1 == m_actor_model)
         {
+            // 根据请求的状态执行读或写操作
             if (0 == request->m_state)
             {
+                // 处理读操作
                 if (request->read_once())
                 {
+                    // 如果读取成功，设置改进标志，并处理请求
                     request->improv = 1;
                     connectionRAII mysqlcon(&request->mysql, m_connPool);
-                    request->process();//（HTTP请求的`process`函数）
+                    request->process();
                 }
                 else
                 {
+                    // 如果读取失败，设置定时器标志
                     request->improv = 1;
                     request->timer_flag = 1;
                 }
             }
             else
             {
+                // 处理写操作
                 if (request->write())
                 {
+                    // 如果写入成功，设置改进标志
                     request->improv = 1;
                 }
                 else
                 {
+                    // 如果写入失败，设置定时器标志
                     request->improv = 1;
                     request->timer_flag = 1;
                 }
             }
         }
         else
-        {   
-            // 如果使用的是 Proactor 模型，直接处理任务
+        {
+            // 如果使用的是 Proactor 模型，直接处理请求
             connectionRAII mysqlcon(&request->mysql, m_connPool);
             request->process();
         }
